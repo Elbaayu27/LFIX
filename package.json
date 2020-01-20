@@ -8,13 +8,17 @@
     "eslint": "eslint app __tests__ index.* --ext .js .jsx --cache",
     "eslint:fix": "npm run eslint -- --fix",
     "ios": "make run-ios",
-    "precommit": "npm run eslint",
-    "prepush": "npm run eslint",
+    
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "test:updateSnapshot": "npm run test -- --updateSnapshot",
     "test:coverage": "npm run test -- --coverage "
   },
+  "husky": {
+    "hooks": {
+        "pre-commit": "lint-staged"
+    }
+},
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
     "@twotalltotems/react-native-otp-input": "^1.1.4",
