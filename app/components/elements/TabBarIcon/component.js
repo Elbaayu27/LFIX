@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
@@ -35,10 +35,16 @@ export default class Component extends React.Component {
     const { icon, isActive, isLabel, label } = this.props;
     const activeStyle = isActive ? styles.active : styles.inactive;
     const textStyle = isActive ? styles.activeText : styles.text;
-    const marginTop = isLabel ? 0 : 5;
+    const marginTop = isLabel ? 1 : 5;
     return (
       <View style={[styles.container, activeStyle]}>
-        <View style={[styles.mainView, { marginTop }]}>{icon}</View>
+        {/* <View style={[styles.mainView, { marginTop }]}>{icon}</View> */}
+        <View style={[styles.mainView, { marginTop }]}>
+          <Image
+           style={{width: 40, height: 40}}
+          source={icon}
+          />
+        </View>
         {isLabel && <Text style={textStyle}>{label}</Text>}
         {this._renderBadge()}
       </View>
@@ -47,7 +53,7 @@ export default class Component extends React.Component {
 }
 
 Component.propTypes = {
-  icon: PropTypes.element,
+  // icon: PropTypes.element,
   badge: PropTypes.oneOf(['standard', 'number', 'none']),
   isActive: PropTypes.bool,
   isLabel: PropTypes.bool,

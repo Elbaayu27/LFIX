@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, PickerIOSComponent } from 'react-native';
 import {
   COLOR_WHITE,
   COLOR_BASE_PRIMARY_LIGHT,
@@ -43,7 +43,8 @@ export default StyleSheet.create({
   mainView: {
     height: 40,
     width: 40,
-    backgroundColor: COLOR_WHITE,
+    // backgroundColor: COLOR_WHITE,
+    backgroundColor : '#175873',
     alignItems: 'center',
     justifyContent: 'center'
   },
