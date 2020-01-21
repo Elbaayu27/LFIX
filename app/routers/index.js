@@ -10,6 +10,7 @@ import CreateEvent from '../screens/CreateEvent';
 import ReviewPlanning from '../screens/ReviewPlanning';
 import Details from '../screens/Details';
 import Verification from '../screens/Verification';
+import Find from '../screens/Find';
 
 export default SwitchNavigator(
   {
@@ -23,7 +24,8 @@ export default SwitchNavigator(
     EventAdded: EventAddedStack,
     ReviewPlanning : ReviewPlanning,
     Details : Details,
-    Verification : Verification
+    Verification : Verification,
+    Find : Find
   },
   {
     initialRouteName: 'OnBoarding'

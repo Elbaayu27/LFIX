@@ -19,7 +19,9 @@ class Component extends React.Component {
     };
   }
 
-  
+  _onPress = () => {
+    this.props.navigation.navigate('Find');
+  };  
 
 
   render() {
@@ -33,41 +35,48 @@ class Component extends React.Component {
         <View style={{backgroundColor:'#175873',flexDirection:'row', flexWrap: 'wrap', width:380, height: 370, borderRadius: 100/4, marginTop:200, marginLeft:16}}>
           {/* Box Kotak */}
           <View style={{flexDirection:'row', justifyContent: 'space-between', width: '100%'}}> 
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:70, height:70, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/kulkas.png')}/>
+          <TouchableOpacity onPress={this._onPress}>
+            <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
+              <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
+                {/* Gambar */}
+                <Image style={{width:70, height:70, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/kulkas.png')}/>
+              </View>
+              <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
+              <Text style={{color:'#000', alignSelf:'center'}}>Refrigerator</Text>
             </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center'}}>Refrigerator</Text>
-          </View>
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:60, height:60, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/ac.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this._onPress}>
+            <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
+              <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
+                {/* Gambar */}
+                <Image style={{width:60, height:60, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/ac.png')}/>
+              </View>
+              <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
+              <Text style={{color:'#000', alignSelf:'center'}}>AC</Text>
             </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center'}}>AC</Text>
-          </View>
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:70, height:70, marginTop: 10,}} source={require('../../../assets/images/gadgets.png')}/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={this._onPress} >
+            <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
+              <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
+                {/* Gambar */}
+                <Image style={{width:70, height:70, marginTop: 10,}} source={require('../../../assets/images/gadgets.png')}/>
+              </View>
+              <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
+              <Text style={{color:'#000', alignSelf:'center'}}>Gadgets</Text>
             </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center'}}>Gadgets</Text>
+          </TouchableOpacity>
           </View>
-          
-          </View>
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginLeft:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:70, height:70, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/cuci.png')}/>
+          <TouchableOpacity onPress={this._onPress}>
+            <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginLeft:10, borderRadius:100/6}}>
+              <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
+                {/* Gambar */}
+                <Image style={{width:70, height:70, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/cuci.png')}/>
+              </View>
+              <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
+              <Text style={{color:'#000', alignSelf:'center', fontSize:12}}>Washing
+              Mechine</Text>
             </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center', fontSize:12}}>Washing
-            Mechine</Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <Image style={styles.carousel} source={require('../../../assets/images/carousel.jpeg')}/>
       </View>

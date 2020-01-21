@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Image, StatusBar, SectionList, Text, TouchableOpacity, ActivityIndicator, ImageBackground } from 'react-native';
+import { View, Image, StatusBar, FlatList, Text, TextInput, ImageBackground, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
-import MainScreen from '../../components/layouts/MainScreen';
-// import Header from '../../components/elements/Header';
+import Back from '../../../assets/svgs/Back';
 import styles from './styles';
 import { connect } from 'react-redux';
 import {getDataProject, getSquadSelected} from '../../actions';
+import Checkbox from 'react-native-custom-checkbox';
+import Button from '../../components/elements/Button';
 
 
 class Component extends React.Component {
@@ -15,9 +16,22 @@ class Component extends React.Component {
       isLoading: true,
       bandwitdh: '0',
       dataSource: [],
+      data: [{nama:'Freon', harga:'Rp.30.000'}, {nama:'Lampu', harga:'Rp.50.000'}]
       // data : this.props.user.response.data.key
     };
   }
+
+  FlatListItemSeparator = () => {
+    return (
+      //Item Separator
+      <View
+        style={{ height: 1, width: 300, backgroundColor: '#000', alignSelf:'center' }}
+      />
+    ); 
+  };
+  _onPress = () => {
+    this.props.navigation.navigate('Home');
+  };
   render() {
     return (
       <View style={{backgroundColor: '#ffffff', flex:1}}>
@@ -26,46 +40,85 @@ class Component extends React.Component {
              backgroundColor='#175873'
              barStyle='light-content'
              />
-        <View style={{backgroundColor:'#175873',flexDirection:'row', flexWrap: 'wrap', width:380, height: 370, borderRadius: 100/4, marginTop:200, marginLeft:16}}>
-          {/* Box Kotak */}
-          <View style={{flexDirection:'row', justifyContent: 'space-between', width: '100%'}}> 
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:70, height:70, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/kulkas.png')}/>
-            </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center'}}>Refrigerator</Text>
-          </View>
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:60, height:60, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/ac.png')}/>
-            </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center'}}>AC</Text>
-          </View>
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginHorizontal:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:70, height:70, marginTop: 10,}} source={require('../../../assets/images/gadgets.png')}/>
-            </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center'}}>Gadgetsss</Text>
-          </View>
-          
-          </View>
-          <View style={{backgroundColor:'#ffffff', width:100, height:130, marginTop:50, marginLeft:10, borderRadius:100/6}}>
-            <View style={{backgroundColor:'#175873', borderRadius:100/2, width:90, height:90, marginTop:5, alignSelf:'center'}}>
-              {/* Gambar */}
-              <Image style={{width:70, height:70, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/cuci.png')}/>
-            </View>
-            <View style={{height: 1, width: 100, backgroundColor:'#000', marginTop:10}}/>
-            <Text style={{color:'#000', alignSelf:'center', fontSize:12}}>Washing
-            Mechine</Text>
+        <View style={{backgroundColor: '#175873', height : 56, width: 411, flexDirection: 'row'}}>
+          <Back style={{alignSelf:'flex-start', marginTop: 10, marginLeft : 10}} onPress={this._onPress}/>
+          <Text style={styles.title}>Refrigerator</Text>
+        </View>
+
+        <View style={{borderWidth:1, borderRadius:100/10, height: 40, width:350, marginTop:30, alignSelf:'center', flexDirection:'row', justifyContent:'center'}}>
+          <Text style={{color:'#000', fontSize: 20, fontWeight:'400', alignSelf:'center'}}>Syarat dan Ketentuan</Text>
+          <Image style={{width:30, height:30, marginTop: 5, marginLeft:15}} source={require('../../../assets/images/arrowright.png')}/>
+        </View>
+
+        <View style={{marginTop:30, justifyContent:'space-between', width:350, flexDirection:'row', alignSelf:'center'}}>
+          <Image style={{width:30, height:30, marginTop: 5, marginLeft:5 }} source={require('../../../assets/images/blueloc.png')}/>
+          <View style={styles.textAreaContainer} >
+            <TextInput
+            style={styles.textArea}
+            underlineColorAndroid="transparent"
+            placeholder="Lokasi Anda.."
+            placeholderTextColor="black"
+            numberOfLines={10}
+            multiline={true}
+            />
           </View>
         </View>
-        <Image style={styles.carousel} source={require('../../../assets/images/carousel.jpeg')}/>
+
+        <View style={{flexDirection:'row', justifyContent:'center', marginTop:30}}>
+          <View style={{backgroundColor:'#175873', borderRadius:100/2, width:40, height:40, marginTop:5, alignSelf:'center'}}>
+            <Image style={{width:20, height:20, marginTop: 13, marginLeft:10}} source={require('../../../assets/images/tools.png')}/>
+          </View>
+          <Text style={{color:'#000', fontSize: 20, fontWeight:'400', marginTop:10, paddingLeft:5}}>Info Service</Text>
+        </View>
+
+        {/* <ScrollView> */}
+          <View style={{height:200, width:300, borderWidth:1, borderRadius:10, marginTop:10, alignSelf:'center'}}>
+            <FlatList
+                  data={this.state.data}
+                  ItemSeparatorComponent={this.FlatListItemSeparator}
+                  keyExtractor={(item, index) => index.toString()}
+                  renderItem={({item, index}) => (
+                    <View  style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between', width:300, alignSelf:'center'}}>
+                      <Text style={styles.item} onPress={ async () =>
+                      {
+                        const dataMeasure = {id: item.measurementId, name: item.name}
+                        await this.props.measureChoosen(dataMeasure)
+                        this.props.navigation.navigate('GiveAssessment')
+                      }
+                      }>
+                        {item.nama}
+                      </Text>
+                      <Text style={styles.item} onPress={ async () =>
+                      {
+                        const dataMeasure = {id: item.measurementId, name: item.name}
+                        await this.props.measureChoosen(dataMeasure)
+                        this.props.navigation.navigate('GiveAssessment')
+                      }
+                      }>
+                        {item.harga}
+                      </Text>
+                    </View>
+                  )}
+              />
+            </View>
+          {/* </ScrollView> */}
+
+          <View style={{marginTop:30, justifyContent:'flex-start', width:350, flexDirection:'row', alignSelf:'center'}}>
+            <Checkbox
+              // name = {item.key}
+              name='checkbox1'
+              checked={false}
+              style={{backgroundColor: '#175873', color:'#ffffff', borderRadius: 2}}
+              // onChange={(name, checked) =>this._handleOnChange(name, checked)}
+            /> 
+            <Text style={{color:'black', fontSize:15, marginLeft:5}}>
+              Layanan satu hari jadi
+            </Text>
+          </View>
+
+          <View style={{flexDirection:'row', justifyContent:'center', marginTop:30}}>
+          <Button title="cari teknisi" disabled={false} onPress={ () => this.props.navigation.navigate('Verification')} type="raised-ripple" />
+          </View>
       </View>
     );
   }

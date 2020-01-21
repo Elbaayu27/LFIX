@@ -90,7 +90,7 @@ class Component extends React.Component {
       this.setState({
         isSplashScreen : false
       })
-    },4000)
+    },2000)
   }
     
   render() {
