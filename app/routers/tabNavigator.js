@@ -13,6 +13,12 @@ const COLOR_GREEN = '#1ea54f';
 const COLOR_GREY = '#bdbdbd';
 const COLOR_WHITE = '#ffffff';
 
+//Custom Icon
+const home = require('../../assets/images/home.png');
+const service = require('../../assets/images/tools.png');
+const guarantee = require('../../assets/images/guarantee.png');
+const account = require('../../assets/images/account.png');
+
 const createTab = ({ stack, label, image, iconStyle, badge }) => ({
   screen: stack,
   navigationOptions: ({ navigation }) => ({
@@ -68,33 +74,41 @@ export const AppStack = createTabNavigator([
     label: 'Home',
     stack: HomeStack,
     image: {
-      active: <Home active />,
-      inactive: <Home />
+      // active: <Home active />,
+      // inactive: <Home />
+      active : home,
+      inactive : home
     }
   },
   {
-    label: 'Photo',
+    label: 'Services',
     stack: UploadPhotoStack,
     image: {
-      active: <Add active />,
-      inactive: <Add />
+      // active: <Add active />,
+      // inactive: <Add />
+      active : service,
+      inactive: service
     }
   },
   {
-    label: 'History',
+    label: 'Guarantee',
     stack: HistoryStack,
     image: {
-      active: <Love height={40} width={40} active />,
-      inactive: <Love height={40} width={40} />
+      // active: <Love height={40} width={40} active />,
+      // inactive: <Love height={40} width={40} />
+      active : guarantee,
+      inactive: guarantee
     },
-    badge: 'standard'
+    badge: 'none'
   },
   {
     label: 'Account',
     stack: AccountStack,
     image: {
-      active: <Account active />,
-      inactive: <Account />
+      // active: <Account active />,
+      // inactive: <Account />
+      active : account,
+      inactive: account
     }
   }
 ]);

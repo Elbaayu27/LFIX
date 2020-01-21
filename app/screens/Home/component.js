@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StatusBar, SectionList, Text, TouchableOpacity, ActivityIndicator, ImageBackground } from 'react-native';
+import { View, Image, StatusBar, SectionList, Text, TouchableOpacity, TextInput} from 'react-native';
 import PropTypes from 'prop-types';
 import MainScreen from '../../components/layouts/MainScreen';
 // import Header from '../../components/elements/Header';
@@ -26,13 +26,31 @@ class Component extends React.Component {
 
   render() {
     return (
-      <View style={{backgroundColor: '#ffffff', flex:1}}>
+      <View style={{backgroundColor: '#FFFFFF', flex:1}}>
         <StatusBar
              transculent={false}
              backgroundColor='#175873'
              barStyle='light-content'
              />
-        <View style={{backgroundColor:'#175873',flexDirection:'row', flexWrap: 'wrap', width:380, height: 370, borderRadius: 100/4, marginTop:200, marginLeft:16}}>
+        {/* Pembungkus Search dan Emergency */}
+        <View style={{marginHorizontal:16, flexDirection:'row', marginTop:10}}>
+          {/* Search Bar */}
+          <View style={{position:'relative', flex:1}}>
+            <TextInput
+            underlineColorAndroid="transparent"
+            style = {{borderWidth:1, borderColor: '#000000', borderRadius:10, height:40, fontSize:13, paddingLeft:45, paddingRight:20, marginRight:5}}
+            placeholder = "What Are You Looking ?"
+            />
+            <Image source={require('../../../assets/images/search--v2.png')} style={{width:30, height:30, position:'absolute', top:5, left:5}}/>
+          </View>
+          <View style={{width:70, height:40, alignItems: 'center', justifyContent: 'center'}}>
+            <Image
+              style={{width:40, height:38}}
+              source={require('../../../assets/images/doctor_on_call-512.png')}
+            />
+          </View>
+        </View>
+        <View style={{backgroundColor:'#175873',flexDirection:'row', flexWrap: 'wrap', width:380, height: 370, borderRadius: 100/4, marginTop:150, marginLeft:16}}>
           {/* Box Kotak */}
           <View style={{flexDirection:'row', justifyContent: 'space-between', width: '100%'}}> 
           <TouchableOpacity onPress={this._onPress}>
