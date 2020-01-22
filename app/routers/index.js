@@ -11,6 +11,9 @@ import ReviewPlanning from '../screens/ReviewPlanning';
 import Details from '../screens/Details';
 import Verification from '../screens/Verification';
 import Find from '../screens/Find';
+import WaitingScreen from '../screens/WaitingScreen';
+import OnProcessScreen from '../screens/OnProcessScreen';
+import DoneScreen from '../screens/DoneScreen';
 
 export default SwitchNavigator(
   {
@@ -25,7 +28,10 @@ export default SwitchNavigator(
     ReviewPlanning : ReviewPlanning,
     Details : Details,
     Verification : Verification,
-    Find : Find
+    Find : Find,
+    Waiting : WaitingScreen,
+    OnProcess : OnProcessScreen,
+    Done : DoneScreen
   },
   {
     initialRouteName: 'OnBoarding'

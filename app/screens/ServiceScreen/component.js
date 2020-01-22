@@ -42,7 +42,7 @@ class Component extends React.Component {
   _renderTabWaiting = () => {
     return (
       <View>
-        <TouchableOpacity onPress={() => {/** Handle Press*/}}>
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate('Waiting')}}>
           <View style={styles.containerInsideTab}>
             <View style={{marginLeft: 5,marginTop:5}}>
               <Text style={{fontSize: 22, fontWeight: 'bold',color:'#000000',fontFamily:'roboto'}}>Refrigerator</Text>
@@ -72,7 +72,18 @@ class Component extends React.Component {
 
     return (
       <View>
-        <Text>On Process</Text>
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate('OnProcess')}}>
+          <View style={styles.containerInsideTab}>
+            <View style={{marginLeft: 5,marginTop:5}}>
+              <Text style={{fontSize: 22, fontWeight: 'bold',color:'#000000',fontFamily:'roboto'}}>Refrigerator</Text>
+              <Text style={{fontSize:15, marginTop: 5,fontFamily:'roboto'}}>Jl. Siliwangi No.48</Text>
+            </View>
+            <Image
+              style={{position: 'absolute', left: 350, top: 40}}
+              source={require('../../../assets/images/next.png')}
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     );
   } 
@@ -81,7 +92,18 @@ class Component extends React.Component {
 
     return (
       <View>
-        <Text>Done</Text>
+        <TouchableOpacity onPress={() => {this.props.navigation.navigate('Done')}}>
+          <View style={styles.containerInsideTab}>
+            <View style={{marginLeft: 5,marginTop:5}}>
+              <Text style={{fontSize: 22, fontWeight: 'bold',color:'#000000',fontFamily:'roboto'}}>Refrigerator</Text>
+              <Text style={{fontSize:15, marginTop: 5,fontFamily:'roboto'}}>Jl. Siliwangi No.48</Text>
+            </View>
+            <Image
+              style={{position: 'absolute', left: 350, top: 40}}
+              source={require('../../../assets/images/next.png')}
+            />
+          </View>
+        </TouchableOpacity>
       </View>
     );
   } 
