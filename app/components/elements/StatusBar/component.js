@@ -9,6 +9,9 @@ export default class Component extends React.Component {
     if (Platform.OS === 'ios') {
       return <View style={styles.statusBar} />;
     }
-    return <StatusBar backgroundColor={COLOR_BASE_PRIMARY_MAIN} />;
+    // return <StatusBar backgroundColor={COLOR_BASE_PRIMARY_MAIN} />;
+    return <StatusBar transculent={false}
+    backgroundColor='#175873'
+    barStyle='light-content' />;
   }
 }

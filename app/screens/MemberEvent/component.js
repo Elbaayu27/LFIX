@@ -37,7 +37,7 @@ class Component extends React.Component {
   ];
 
   _onTabChanged = index => {
-    
+    this.setState({ tabIndex: index });
   };
 
   _renderTabMember = () => {

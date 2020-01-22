@@ -17,7 +17,8 @@ export default StyleSheet.create({
     backgroundColor: COLOR_TRANSPARENT
   },
   bottomLineHighlight: {
-    backgroundColor: COLOR_BASE_PRIMARY_MAIN
+    // backgroundColor: COLOR_BASE_PRIMARY_MAIN
+    backgroundColor: '#175873'
   },
   tabLabel: {
     ...FONT_BODY1_PRIMARY,

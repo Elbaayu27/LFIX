@@ -1,13 +1,10 @@
 import { StackNavigator } from 'react-navigation';
 import Home from '../screens/Home';
 import UploadPhoto from '../screens/UploadPhoto';
+import ServiceScreen from '../screens/ServiceScreen';
 import History from '../screens/History';
 import Account from '../screens/Account';
 import OnBoarding from '../screens/OnBoarding';
-import MemberEvent from '../screens/MemberEvent';
-import CreateEvent from '../screens/CreateEvent';
-import ListAssessment from '../screens/ListAssessment';
-import GiveAssessment from '../screens/GiveAssessment';
 import Verification from '../screens/Verification';
 import EventAdded from '../screens/EventAdded';
 import AssessmentSuccess from '../screens/AssessmentSuccess';
@@ -24,10 +21,10 @@ export const HomeStack = StackNavigator(
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );
 
-export const UploadPhotoStack = StackNavigator(
+export const ServiceScreenStack = StackNavigator(
   {
-    UploadPhoto: {
-      screen: UploadPhoto,
+    ServiceScreen: {
+      screen: ServiceScreen,
       navigationOptions: {
         tabBarVisible: true
       }

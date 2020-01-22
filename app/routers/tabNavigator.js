@@ -1,17 +1,17 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
-import { HomeStack, UploadPhotoStack, HistoryStack, AccountStack } from './stackNavigator';
+import { HomeStack, ServiceScreenStack, HistoryStack, AccountStack } from './stackNavigator';
 import TabBarBottom from '../components/elements/TabBarBottom';
 import TabBarIcon from '../components/elements/TabBarIcon';
-import Home from '../../assets/svgs/Home';
-import Add from '../../assets/svgs/Add';
-import Love from '../../assets/svgs/Love';
-import Account from '../../assets/svgs/Account';
+// import Home from '../../assets/svgs/Home';
+// import Add from '../../assets/svgs/Add';
+// import Love from '../../assets/svgs/Love';
+// import Account from '../../assets/svgs/Account';
 
 const COLOR_DARK_GREY = '#797979';
 const COLOR_GREEN = '#1ea54f';
 const COLOR_GREY = '#bdbdbd';
-const COLOR_WHITE = '#ffffff';
+// const COLOR_WHITE = '#ffffff';
 
 //Custom Icon
 const home = require('../../assets/images/home.png');
@@ -82,7 +82,7 @@ export const AppStack = createTabNavigator([
   },
   {
     label: 'Services',
-    stack: UploadPhotoStack,
+    stack: ServiceScreenStack,
     image: {
       // active: <Add active />,
       // inactive: <Add />
