@@ -39,7 +39,7 @@ export default {
     let style = {
       ...container,
       borderWidth: 1,
-      borderColor: COLOR_GREY_DARK,
+      borderColor: '#000',
       backgroundColor: COLOR_WHITE
     };
     if (type === TYPES.GHOST) {
@@ -95,31 +95,31 @@ export default {
   textStyle: (type, editable) => {
     const style = {
       ...FONT_SUBTITLE1_PRIMARY,
-      color: COLOR_BLACK
+      color: '#000'
     };
     if (!editable && type === TYPES.GHOST) {
-      style.color = COLOR_GREY;
+      style.color = '#000';
     }
     return style;
   },
   textInputStyle: type => {
     let style = {
       ...FONT_SUBTITLE1_PRIMARY,
-      color: COLOR_GREY_DARK,
+      color: '#000',
       marginHorizontal: 17
     };
     if (type === TYPES.GHOST) {
-      style.color = COLOR_GREY;
+      style.color = '#000';
     }
     return style;
   },
   textOptional: (type, editable) => {
     const style = {
       ...FONT_BODY2_PRIMARY,
-      color: COLOR_BLACK
+      color: '#000'
     };
     if (!editable && type === TYPES.GHOST) {
-      style.color = COLOR_GREY;
+      style.color = '#000';
     }
     return style;
   },

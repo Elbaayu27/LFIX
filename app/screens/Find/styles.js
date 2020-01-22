@@ -11,6 +11,13 @@ const styles = StyleSheet.create({
     left:16,
     flexDirection:'column'
   },
+  item: {
+    padding: 10,
+    fontSize: 18,
+    height: 44,
+    color: '#000',
+  
+  },
   SectionHeaderStyle: {
     backgroundColor: '#289f97',
     fontSize: 15,
@@ -32,7 +39,7 @@ const styles = StyleSheet.create({
     ...FONT_HEADLINE6_PRIMARY,
     color: COLOR_WHITE,
     alignSelf: 'center',
-    marginLeft: 100
+    marginLeft: 120
   },
   carousel : {
     position:'absolute',
@@ -41,7 +48,21 @@ const styles = StyleSheet.create({
     borderRadius:100/4,
     left:55,
     top:80
-  }
+  },
+  textAreaContainer: {
+    borderColor: '#000',
+    borderWidth: 1,
+    borderRadius:100/8,
+    width: 300,
+    paddingLeft:5,
+    height:40
+
+  },
+  textArea: {
+    height: 35,
+    justifyContent: "center",
+
+  } 
   
 });
 

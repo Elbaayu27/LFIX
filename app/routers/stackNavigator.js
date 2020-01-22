@@ -7,12 +7,25 @@ import Account from '../screens/Account';
 import OnBoarding from '../screens/OnBoarding';
 import Verification from '../screens/Verification';
 import EventAdded from '../screens/EventAdded';
+import Find from "../screens/Find";
 import AssessmentSuccess from '../screens/AssessmentSuccess';
 
 export const HomeStack = StackNavigator(
   {
     Home: {
       screen: Home,
+      navigationOptions: {
+        tabBarVisible: true
+      }
+    }
+  },
+  { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
+);
+
+export const FindStack = StackNavigator(
+  {
+    Find: {
+      screen: Find,
       navigationOptions: {
         tabBarVisible: true
       }
