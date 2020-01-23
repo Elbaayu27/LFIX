@@ -2,6 +2,7 @@ import { StackNavigator } from 'react-navigation';
 import Home from '../screens/Home';
 import UploadPhoto from '../screens/UploadPhoto';
 import ServiceScreen from '../screens/ServiceScreen';
+import GuaranteeScreen from '../screens/GuaranteeScreen'
 import History from '../screens/History';
 import Account from '../screens/Account';
 import OnBoarding from '../screens/OnBoarding';
@@ -46,10 +47,10 @@ export const ServiceScreenStack = StackNavigator(
   { headerMode: 'none', navigationOptions: { tabBarVisible: false } }
 );
 
-export const HistoryStack = StackNavigator(
+export const GuaranteeScreenStack = StackNavigator(
   {
-    History: {
-      screen: History,
+    GuaranteeScreen: {
+      screen: GuaranteeScreen,
       navigationOptions: {
         tabBarVisible: true
       }

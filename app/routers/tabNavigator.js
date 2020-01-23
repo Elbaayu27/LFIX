@@ -1,6 +1,6 @@
 import React from 'react';
 import { TabNavigator } from 'react-navigation';
-import { HomeStack, ServiceScreenStack, HistoryStack, AccountStack } from './stackNavigator';
+import { HomeStack, ServiceScreenStack, GuaranteeScreenStack, AccountStack } from './stackNavigator';
 import TabBarBottom from '../components/elements/TabBarBottom';
 import TabBarIcon from '../components/elements/TabBarIcon';
 // import Home from '../../assets/svgs/Home';
@@ -92,7 +92,7 @@ export const AppStack = createTabNavigator([
   },
   {
     label: 'Guarantee',
-    stack: HistoryStack,
+    stack: GuaranteeScreenStack,
     image: {
       // active: <Love height={40} width={40} active />,
       // inactive: <Love height={40} width={40} />

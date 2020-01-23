@@ -43,12 +43,14 @@ class Component extends React.Component {
             />
             <Image source={require('../../../assets/images/search--v2.png')} style={{width:30, height:30, position:'absolute', top:5, left:5}}/>
           </View>
-          <View style={{width:70, height:40, alignItems: 'center', justifyContent: 'center'}}>
-            <Image
-              style={{width:40, height:38}}
-              source={require('../../../assets/images/doctor_on_call-512.png')}
-            />
-          </View>
+          <TouchableOpacity>
+              <View style={{width:70, height:40, alignItems: 'center', justifyContent: 'center'}}>
+                <Image
+                  style={{width:40, height:38}}
+                  source={require('../../../assets/images/doctor_on_call-512.png')}
+                />
+              </View>
+          </TouchableOpacity>
         </View>
         <View style={{backgroundColor:'#175873',flexDirection:'row', flexWrap: 'wrap', width:380, height: 370, borderRadius: 100/4, marginTop:150, marginLeft:16}}>
           {/* Box Kotak */}

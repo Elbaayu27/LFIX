@@ -14,6 +14,8 @@ import Find from '../screens/Find';
 import WaitingScreen from '../screens/WaitingScreen';
 import OnProcessScreen from '../screens/OnProcessScreen';
 import DoneScreen from '../screens/DoneScreen';
+import RatingScreen from '../screens/RatingScreen';
+import DetailGuaranteeScreen from '../screens/DetailGuarantee';
 
 export default SwitchNavigator(
   {
@@ -31,7 +33,9 @@ export default SwitchNavigator(
     Find : Find,
     Waiting : WaitingScreen,
     OnProcess : OnProcessScreen,
-    Done : DoneScreen
+    Done : DoneScreen,
+    Rating: RatingScreen,
+    DetailGuarantee: DetailGuaranteeScreen
   },
   {
     initialRouteName: 'OnBoarding'
